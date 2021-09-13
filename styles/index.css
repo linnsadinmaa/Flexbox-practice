@@ -1,12 +1,15 @@
-/*CONTAINER 1*/ /* Q:How to align the containers in center of the page?*/
+/*CONTAINER 1*/ 
+/* Q:How to align the containers in center of the page?
+set width to 100%, height to 100vh. You can also set body if you want 
+to width 100%, min-height 100vh, flex, center, center, and wrap*/
 
 .container1 {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: center;
-    height: 700px;
+    min-height: 100vh;
     width: 1152px;
+    width: 100%;
     margin: 20px;
     background-color: #6A040F;
     
@@ -31,8 +34,7 @@
 .container1--content2 {
     flex-direction: row;
     justify-content: center;
-    min-height: 78px;
-    align-items: stretch; /* Stretch not working adjusted height in .bok__stretch */    
+    align-items: stretch;    
 }
 
 .container1--content3 {
@@ -41,20 +43,18 @@
 }
 
 .container1--content4 {
-    justify-content: space-between;
+    justify-content: space-between; 
 }
 
 .container1--content5 {
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    align-self: baseline;
+    align-items: baseline;
 }
 
-.container1--content6 { /*This container (orange)is not in line, why?*/
+.container1--content6 { 
     justify-content: center;
     align-items: center;
-
 }
 
 .box {
@@ -73,39 +73,55 @@
 }
 
  .box__stretch {
-    min-height: 120px;
+    width: 78px;
+    min-height: 78px;
     margin: 20px;
-    align-items: stretch;
-    /*Cannot figure out stretch adjusting height instead*/ 
+    background-color: #9D0208;
+    border-radius: 4px;
+    /*Cannot figure out stretch */ 
  }
 
  .box__horizontal {
-    width: 156px;
-    height: 78px;
-    margin: 20px;
+    flex-grow: 1;
  }
 
  .box__text {
     color: white;
     display: flex;
-    align-items: baseline;
     justify-content: center;
-     /* Q: How to align all box-text to same baseline? */
+ }
+ .box5 {
+     height: 90px;
  }
 
- /*CONTAINER 2*/ /* Q: How to make a wider left margine to the boxes?*/
+ /*CONTAINER 2*/ /* Q: How to make a wider left margine to the boxes?
+ put everything in a larger container nested just under .container2. 
+ Then give container2 flex, center, center, wrap and give container2.5 
+ (which is located between container 2 and the rest of the content) 
+ flex, flex-start, flex-start, wrap. This will center the middle container 
+ to the center of the screen and then align the content inside that container 
+ to the left side which creates the illusion of a large margin*/
 
  .container2 {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
+    flex-flow: wrap;
+    justify-content: center;
     align-content: center;
     height: 700px;
+    height: 100vh;
     width: 1152px;
+    width: 100%;
     margin: 20px;
     background-color: #FAA307;
  }
 
+ .sub-container2 {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: flex-start;
+     align-content: center;
+     max-width: 1000px;
+ }
  .container-black {
     display: flex;
     width: 273px;
@@ -146,20 +162,19 @@
     align-items: flex-end;  
  }
 
- /* Q: How do I adjust space between rows?*/
  .container2--item3 {
      flex-flow: row wrap;
-     align-items: space-between;
+     align-content: space-around;
  }
 
  .container2--item4 {
      flex-flow: row wrap;
-     align-items: space-evenly;
+     align-content: space-between;
  }
 
  .container2--item5 {
     flex-flow: row wrap;
-    align-items: center;
+    align-content: center;
     justify-content: center;
  }
 
